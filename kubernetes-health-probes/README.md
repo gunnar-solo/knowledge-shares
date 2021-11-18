@@ -18,6 +18,7 @@
 * gotchas
     * multiple probes at once don't wait for one another
     * "exec true" is a nightmare
+    * probes are a _container_-centric idea, not _pod_
 
 ## Have some more time?  Here are some good links
 * [Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) - official Kubernetes docs
