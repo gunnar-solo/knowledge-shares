@@ -1,4 +1,5 @@
 # Knowledge Share - Kubernetes Health Checks
+[Meeting Recording, Here](https://drive.google.com/file/d/1YW20G8J8MRXIWcJLoBghELK0ID3tRJ5n/view?usp=sharing)
 
 ## Neat-o script:
 * what are healthchecks for?
