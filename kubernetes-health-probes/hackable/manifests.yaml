@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hackable
+spec:
+  selector:
+    app: hackable
+  ports:
+  - protocol: "TCP"
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hackable
+spec:
+  selector:
+    matchLabels:
+      app: hackable
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hackable
+    spec:
+      containers:
+      - name: flask
+        image: docker.io/library/hackable:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+        startupProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8080
+            scheme: HTTP
